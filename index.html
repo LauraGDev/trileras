@@ -5,38 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style-desktop.css">
     <title>Sigue al caparazón</title>
 </head>
 
 <body>
-    <header>
+    <header class="contenedor">
         <h1>Sigue al caparazón</h1>
         <h2>AZARGame</h2>
     </header>
     <main>
-        <article id="pantallaInicio">
-            <section>
-                <p>texto decorativo</p>
-                <a href="#">juega aquí</a>
-                <p>texto decorativo</p>
+        <article id="pantallaInicio" class="contenedor">
+            <section id="btnJugar">
+                <a href="#">EMPIEZA A JUGAR</a>
             </section>
-        </article>
-        <article id="juego">
-            <section>temporizador</section>
-            <section>
-                <h3>puntuaciones</h3>
-                <p>partidas ganadas <span id="ganadas">0</span></p>
-                <p>partidas perdidas <span id="perdidas">0</span></p>
-                <a>reset</a>
-            </section>
-            <section>
+            <section id="juego" class="contenedor">
+                <section>temporizador</section>
                 <section>
-                    <div>cap1</div>
-                    <div>cap2</div>
-                    <div>cap3</div>
-                    <div>pelotita</div>
+                    <h3>puntuaciones</h3>
+                    <p>partidas ganadas <span id="ganadas">0</span></p>
+                    <p>partidas perdidas <span id="perdidas">0</span></p>
+                    <a>reset</a>
                 </section>
-                <button>volver a jugar</button>
+                <section class="zonaJugable">
+                    <section class="caparazones">
+                        <div class="caparazon">
+                            <img id="0" src="/images/caparazon.svg" />
+                        </div>
+                        <div class="caparazon">
+                            <img id="1" src="/images/caparazon.svg" />
+                            <div id="pelotita"><div></div></div>
+                        </div>
+                        <div class="caparazon">
+                            <img id="2" src="/images/caparazon.svg" />
+                        </div>
+                    </section>
+                    <button id="btnRejugar">volver a jugar</button>
+                </section>
             </section>
         </article>
     </main>

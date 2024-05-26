@@ -1,5 +1,87 @@
+.body {
+    background-color: #de70bd;
+    background-image: url(\images\fondo-ondas.svg);
+    font-family: "Roboto", sans-serif;
+}
+
 .contenedor {
     margin: 0 auto;
+
+}
+
+.contenedor-title {
+    display: flex;
+    justify-content: center;
+
+}
+
+.title {
+    width: 250px;
+    height: 80px;
+    margin-top: 40px;
+
+
+}
+
+.boton-jugar {
+
+    width: 200px;
+    height: 150px;
+
+}
+
+.contenedor-boton-jugar {
+    display: flex;
+    justify-content: center;
+}
+
+a:hover img {
+    transform: scale(1.05);
+}
+
+.temporizador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    background-color: #e7f0be;
+    border-radius: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 800;
+    font-size: 25px;
+    margin-left: 30px;
+    border-color: black;
+    border-style: solid;
+    color: black
+}
+
+.contenedor-score {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    background-color: #e7f0be;
+    justify-content:center;
+    align-items: center;
+    margin-left: 60%;
+    margin-right: 45px;
+    border-radius: 20px;
+    border-color: black;
+    border-style:solid;
+    color: #283039;
+
+}
+.boton-reset {
+    display: flex;
+    justify-content:space-around;
+
+    background-color:#DE70BF;
+    color: #283039;
+    width: 90px;
+    border-radius: 8px;
+    border-style:solid;
+    border-color:black;
+    font-weight: 800;
 }
 
 .zonaJugable {
@@ -67,6 +149,12 @@
     opacity: 60%;
 }
 
+.footer {
+    display: flex;
+    justify-content: center;
+    color: #E7F0BE;
+}
+
 
 @keyframes levantar {
     0% {
@@ -76,7 +164,7 @@
     100% {
         transform: translateY(-70%);
     }
-    
+
 }
 
 @keyframes bajar {
@@ -101,4 +189,5 @@
     100% {
         transform: translateY(0%);
     }
+
 }

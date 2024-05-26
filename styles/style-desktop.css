@@ -1,4 +1,63 @@
-@media screen and (min-width: 867px){ 
+@media screen and (min-width: 867px) {
+    .body {
+        background-color: #de70bf;
+        font-family: "Roboto", sans-serif;
+    }
+
+
+    .contenedor-title {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .title {
+
+        width: 250px;
+        height: 80px;
+        margin-top: 40px;
+
+    }
+
+    .boton-jugar {
+
+        width: 501px;
+        height: 246px;
+    }
+
+    .contenedor-boton-jugar {
+        display: flex;
+        justify-content: center;
+    }
+
+    .temporizador {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 75px;
+        height: 75px;
+        background-color: beige;
+        border-radius: 50px;
+        border-color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: 800;
+        font-size: 25px;
+        margin-right: 30px;
+    }
+
+    .contenedor-score {
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px;
+        background-color: #e7f0be;
+        align-items: center;
+        margin-left: 60%;
+        margin-right: 45px;
+        border-radius: 20px;
+        border-color: black;
+    }
+
     .zonaJugable {
         max-width: 800px;
         margin: 0 auto;
@@ -6,5 +65,11 @@
 
     #pelotita {
         top: 100px;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        color: #E7F0BE;
     }
 }

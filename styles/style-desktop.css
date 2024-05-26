@@ -1,0 +1,10 @@
+@media screen and (min-width: 867px){ 
+    .zonaJugable {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    #pelotita {
+        top: 100px;
+    }
+}

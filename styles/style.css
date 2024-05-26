@@ -1,0 +1,104 @@
+.contenedor {
+    margin: 0 auto;
+}
+
+.zonaJugable {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.caparazones {
+    margin-top: 20%;
+}
+
+.caparazon {
+    position: absolute;
+    width: 32%;
+    transition: left 1.5s ease;
+}
+
+.caparazon img {
+    position: absolute;
+    animation: nombre 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.caparazon:nth-child(1) {
+    left: 0%;
+}
+
+.caparazon:nth-child(2) {
+    left: 34%;
+}
+
+.caparazon:nth-child(3) {
+    left: 68%;
+}
+
+#pelotita {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#pelotita div {
+    width: 15%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: #E7F0BE;
+    z-index: -1;
+}
+
+#btnRejugar {
+    display: block;
+    margin: 50% auto 15% auto;
+    background-color: #E7F0BE;
+    border: none;
+    padding: 10px;
+    color: #283039;
+    cursor: pointer;
+}
+
+#btnRejugar:disabled {
+    cursor: initial;
+    opacity: 60%;
+}
+
+
+@keyframes levantar {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-70%);
+    }
+    
+}
+
+@keyframes bajar {
+    0% {
+        transform: translateY(-70%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes darPista {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(-70%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}

@@ -1,7 +1,11 @@
+
 .body {
     background-color: #de70bd;
-    background-image: url(\images\fondo-ondas.svg);
+    background-image:url("../images/fondo-ondas.svg");
     font-family: "Roboto", sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .contenedor {

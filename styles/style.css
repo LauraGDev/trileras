@@ -1,7 +1,6 @@
-
 .body {
     background-color: #de70bd;
-    background-image:url("../images/fondo-ondas.svg");
+    background-image: url("../images/fondo-ondas.svg");
     font-family: "Roboto", sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
@@ -37,11 +36,9 @@
 .contenedor-boton-jugar {
     display: flex;
     justify-content: center;
+    animation: latido 1.5s ease-in-out infinite forwards;
 }
 
-a:hover img {
-    transform: scale(1.05);
-}
 
 .temporizador {
     display: flex;
@@ -65,26 +62,27 @@ a:hover img {
     flex-direction: column;
     margin-right: 30px;
     background-color: #e7f0be;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     margin-left: 60%;
     margin-right: 45px;
     border-radius: 20px;
     border-color: black;
-    border-style:solid;
+    border-style: solid;
     color: #283039;
 
 }
+
 .boton-reset {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
 
-    background-color:#DE70BF;
+    background-color: #DE70BF;
     color: #283039;
     width: 90px;
     border-radius: 8px;
-    border-style:solid;
-    border-color:black;
+    border-style: solid;
+    border-color: black;
     font-weight: 800;
 }
 
@@ -194,4 +192,31 @@ a:hover img {
         transform: translateY(0%);
     }
 
+}
+
+@keyframes latido {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes deslizar-izquierda {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
 }

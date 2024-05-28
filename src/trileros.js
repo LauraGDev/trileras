@@ -1,4 +1,4 @@
-const btnJugar = document.getElementById("btnJugar");
+
 const btnRejugar = document.getElementById("btnRejugar");
 const numMix2 = 5;
 const caparazones = document.getElementsByClassName("caparazon");
@@ -6,13 +6,10 @@ const ganador = document.getElementById("1");
 let posicionCaparazon = ["izq", "centro", "der"];
 let caparazonLevantado;
 
-btnJugar.addEventListener("click", iniciarJuego);
+
 btnRejugar.addEventListener("click", volverAjugar);
 
-function iniciarJuego() {
-    //TODO: Esconder el empieza a jugar y aparece juego
-    mezclarCaparazones();
-}
+
 
 function volverAjugar() {
     animar("bajar", "0.5s", caparazonLevantado);
@@ -103,4 +100,15 @@ function mostrarResultado(e) {
 function animar(animacion, velocidad, elemento) {
     elemento.style.animationDuration = velocidad;
     elemento.style.animationName = animacion;
+}
+//a partir de aquí lo movemos//
+const btnJugar = document.getElementById("btnJugar");
+btnJugar.addEventListener("click", iniciarJuego);
+function iniciarJuego() {
+    animar("deslizar-izquierda","1s",btnJugar);
+    setTimeout(()=>{
+        btnJugar.style.display="none";
+    } ,1000);
+    mezclarCaparazones();
+
 }

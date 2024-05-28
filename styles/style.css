@@ -1,7 +1,6 @@
-
-.body {
+body {
     background-color: #de70bd;
-    background-image:url("../images/fondo-ondas.svg");
+    background-image: url("../images/fondo-ondas.svg");
     font-family: "Roboto", sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,13 +12,13 @@
 
 }
 
-.contenedor-title {
+.contenedor-logo {
     display: flex;
     justify-content: center;
 
 }
 
-.title {
+.logo {
     width: 250px;
     height: 80px;
     margin-top: 40px;
@@ -31,13 +30,13 @@
 
     width: 200px;
     height: 150px;
-
 }
 
-.contenedor-boton-jugar {
-    display: flex;
-    justify-content: center;
+.contenedor-boton-jugar{
+ display: flex;
+justify-content: center;
 }
+
 
 a:hover img {
     transform: scale(1.05);
@@ -51,7 +50,6 @@ a:hover img {
     height: 75px;
     background-color: #e7f0be;
     border-radius: 50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 800;
     font-size: 25px;
     margin-left: 30px;
@@ -60,35 +58,36 @@ a:hover img {
     color: black
 }
 
-.contenedor-score {
+.contenedor-puntos {
     display: flex;
     flex-direction: column;
     margin-right: 30px;
     background-color: #e7f0be;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     margin-left: 60%;
     margin-right: 45px;
     border-radius: 20px;
     border-color: black;
-    border-style:solid;
+    border-style: solid;
     color: #283039;
 
 }
-.boton-reset {
-    display: flex;
-    justify-content:space-around;
 
-    background-color:#DE70BF;
+.boton-reiniciar {
+    display: flex;
+    justify-content: space-around;
+
+    background-color: #DE70BF;
     color: #283039;
     width: 90px;
     border-radius: 8px;
-    border-style:solid;
-    border-color:black;
+    border-style: solid;
+    border-color: black;
     font-weight: 800;
 }
 
-.zonaJugable {
+.zona-jugable {
     position: relative;
     margin-top: 50px;
     width: 100%;

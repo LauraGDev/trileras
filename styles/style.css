@@ -32,14 +32,11 @@ body {
     height: 150px;
 }
 
+
 .contenedor-boton-jugar{
- display: flex;
-justify-content: center;
-}
-
-
-a:hover img {
-    transform: scale(1.05);
+  display: flex;
+  justify-content: center;
+  animation: latido 1.5s ease-in-out infinite forwards;
 }
 
 .temporizador {
@@ -73,6 +70,7 @@ a:hover img {
     color: #283039;
 
 }
+
 
 .boton-reiniciar {
     display: flex;
@@ -193,4 +191,31 @@ a:hover img {
         transform: translateY(0%);
     }
 
+}
+
+@keyframes latido {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes deslizar-izquierda {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
 }

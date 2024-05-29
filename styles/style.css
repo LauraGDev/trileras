@@ -136,12 +136,16 @@ body {
 }
 
 #btnRejugar {
+    background-image: url(../images/volver-jugar-boton.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 42%;
+    min-width: 280px;
+    aspect-ratio: 1 / 0.35;
     display: block;
     margin: 50% auto 15% auto;
-    background-color: #E7F0BE;
     border: none;
-    padding: 10px;
-    color: #283039;
     cursor: pointer;
 }
 

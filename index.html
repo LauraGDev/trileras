@@ -13,12 +13,12 @@
     <title>Sigue al caparazón</title>
 </head>
 
-<body class="body">
+<body>
 
     <header class="contenedor">
-        <div class="contenedor-title">
-            <img class="title" src="./images/logo-sigue-al-caparazon.svg" alt="Sigue al caparazón">
-        </div>
+        <section class="contenedor-logo">
+            <img class="logo" src="./images/logo-sigue-al-caparazon.svg" alt="Sigue al caparazón">
+        </section>
     </header>
     <main>
         <article id="pantallaInicio" class="contenedor">
@@ -26,32 +26,37 @@
                 <a href="#"><img class="boton-jugar" src="./images/empieza-jugar-botonii.svg"
                         alt="EMPIEZA A JUGAR" /></a>
             </section>
-            <section id="juego" class="contenedor">
-                <section class="temporizador">00:00</section>
-                <section class="contenedor-score">
-                    <h3>Score</h3>
-                    <p>partidas ganadas <span id="ganadas">0</span></p>
-                    <p>partidas perdidas <span id="perdidas">0</span></p>
-                    <a class="boton-reset">REINICIAR</a>
-                </section>
-                <section class="zonaJugable">
-                    <section class="caparazones">
-                        <div class="caparazon">
-                            <img id="0" src="./images/caparazon.svg" />
-                        </div>
-                        <div class="caparazon">
-                            <img id="1" src="./images/caparazon.svg" />
-                            <div id="pelotita">
-                                <div></div>
-                            </div>
-                        </div>
-                        <div class="caparazon">
-                            <img id="2" src="./images/caparazon.svg" />
-                        </div>
+                <section id="juego" class="contenedor">
+                    <section class="zona-no-jugable">
+                        <section class="temporizador">00:00</section>
+                        <section class="contenedor-puntos">
+                            <section>
+                                <h3>Score</h3>
+                                <p>Ganadas<span id="ganadas">0</span></p>
+                                <p>Perdidas<span id="perdidas">0</span></p>
+                            </section>
+                            <a class="btn-reiniciar" id="btn-reiniciar">REINICIAR</a>
+                        </section>
                     </section>
-                    <button id="btnRejugar">volver a jugar</button>
-                </section>
-            </section>
+                    <section>
+                        <section class="zona-jugable">
+                            <section class="caparazones">
+                                <div class="caparazon">
+                                    <img id="0" src="./images/caparazon.svg" />
+                                </div>
+                                <div class="caparazon">
+                                    <img id="1" src="./images/caparazon.svg" />
+                                    <div id="pelotita">
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="caparazon">
+                                    <img id="2" src="./images/caparazon.svg" />
+                                </div>
+                            </section>
+                            <button id="btnRejugar">volver a jugar</button>
+                        </section>
+                    </section></section>
         </article>
     </main>
     <footer class="footer">

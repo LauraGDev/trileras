@@ -9,34 +9,28 @@ body {
 
 .contenedor {
     margin: 0 auto;
-
 }
 
 .contenedor-logo {
     display: flex;
     justify-content: center;
-
 }
 
 .logo {
     width: 250px;
     height: 80px;
     margin-top: 40px;
-
-
 }
 
 .boton-jugar {
-
     width: 200px;
     height: 150px;
 }
 
-
 .contenedor-boton-jugar{
-  display: flex;
-  justify-content: center;
-  animation: latido 1.5s ease-in-out infinite forwards;
+    display: flex;
+    justify-content: center;
+    animation: latido 1.5s ease-in-out infinite forwards;
 }
 
 .temporizador {
@@ -75,7 +69,6 @@ body {
 .boton-reiniciar {
     display: flex;
     justify-content: space-around;
-
     background-color: #DE70BF;
     color: #283039;
     width: 90px;
@@ -136,12 +129,16 @@ body {
 }
 
 #btnRejugar {
+    background-image: url(../images/volver-jugar-boton.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 42%;
+    min-width: 280px;
+    aspect-ratio: 1 / 0.35;
     display: block;
     margin: 50% auto 15% auto;
-    background-color: #E7F0BE;
     border: none;
-    padding: 10px;
-    color: #283039;
     cursor: pointer;
 }
 
@@ -156,7 +153,6 @@ body {
     color: #E7F0BE;
 }
 
-
 @keyframes levantar {
     0% {
         transform: translateY(0);
@@ -165,7 +161,6 @@ body {
     100% {
         transform: translateY(-70%);
     }
-
 }
 
 @keyframes bajar {
@@ -182,15 +177,12 @@ body {
     0% {
         transform: translateY(0%);
     }
-
     50% {
         transform: translateY(-70%);
     }
-
     100% {
         transform: translateY(0%);
     }
-
 }
 
 @keyframes latido {
@@ -198,17 +190,16 @@ body {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
-
     50% {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
-
     100% {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
 }
+
 @keyframes deslizar-izquierda {
     0% {
         transform: translateX(0);

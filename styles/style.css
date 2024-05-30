@@ -11,6 +11,13 @@ body {
     margin: 0 auto;
 
 }
+#btnSilenciar {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    border:1px solid #F18054 ;
+    
+}
 
 .contenedor-logo {
     display: flex;

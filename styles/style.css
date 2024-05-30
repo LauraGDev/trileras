@@ -10,6 +10,13 @@ body {
 .contenedor {
     margin: 0 auto;
 }
+#btnSilenciar {
+    width: 39px;
+    height: 39px;
+    background-color: transparent;
+    
+}
+
 
 .contenedor-logo {
     display: flex;

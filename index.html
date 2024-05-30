@@ -4,17 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigue al caparazón</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/63b7e177a4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/style-desktop.css" rel="preconnect" href="https://fonts.googleapis.com">
-    <title>Sigue al caparazón</title>
+    <link rel="stylesheet" href="styles/style-desktop.css">
+
 </head>
 
 <body>
     <header class="contenedor">
+
+        <a href="#" id="btnSilenciar">
+            <img id="imgSonido" src="./images/volumen-on-boton.svg" alt="silenciar/activar sonido"/>
+        </a>
         <section class="contenedor-logo">
             <img class="logo" src="./images/logo-sigue-al-caparazon.svg" alt="Sigue al caparazón">
         </section>
@@ -31,6 +36,7 @@
                     <section class="contenedor-puntos">
                         <section>
                             <h3>Score</h3>
+
                             <p>Ganadas <span id="ganadas">0</span></p>
                             <p>Perdidas <span id="perdidas">0</span></p>
                         </section>
@@ -43,15 +49,18 @@
                             </div>
                             <div class="caparazon">
                                 <img id="1" src="./images/caparazon-ii.svg" />
+
                                 <div id="pelotita">
                                     <div></div>
                                 </div>
                             </div>
                             <div class="caparazon">
+
                                 <img id="2" src="./images/caparazon-ii.svg" />
                             </div>
                         </section>
                         <button id="btnRejugar"></button>
+
                     </section>
                 </section>
             </section>

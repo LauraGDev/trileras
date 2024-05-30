@@ -14,10 +14,10 @@ body {
 #btnSilenciar {
     width: 39px;
     height: 39px;
-    border-radius: 50%;
-    border:1px solid #F18054 ;
+    background-color: transparent;
     
 }
+
 
 .contenedor-logo {
     display: flex;

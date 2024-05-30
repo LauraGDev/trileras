@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/63b7e177a4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style-desktop.css" rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
     <title>Sigue al caparazón</title>
 </head>
 
@@ -26,37 +26,38 @@
                 <a href="#"><img class="boton-jugar" src="./images/empieza-jugar-botonii.svg"
                         alt="EMPIEZA A JUGAR" /></a>
             </section>
-                <section id="juego" class="contenedor">
-                    <section class="zona-no-jugable">
-                        <section class="temporizador">00:00</section>
-                        <section class="contenedor-puntos">
-                            <section>
-                                <h3>Score</h3>
-                                <p>Ganadas<span id="ganadas">0</span></p>
-                                <p>Perdidas<span id="perdidas">0</span></p>
-                            </section>
-                            <a class="btn-reiniciar" id="btn-reiniciar">REINICIAR</a>
+            <section id="juego" class="contenedor">
+                <section class="zona-no-jugable">
+                    <section class="temporizador">00:00</section>
+                    <section class="contenedor-puntos">
+                        <section>
+                            <h3>Score</h3>
+                            <p>Ganadas <span id="ganadas">0</span></p>
+                            <p>Perdidas <span id="perdidas">0</span></p>
                         </section>
+                        <a class="btn-reiniciar" id="btn-reiniciar">REINICIAR</a>
                     </section>
-                    <section>
-                        <section class="zona-jugable">
-                            <section class="caparazones">
-                                <div class="caparazon">
-                                    <img id="0" src="./images/caparazon.svg" />
+                </section>
+                <section>
+                    <section class="zona-jugable">
+                        <section class="caparazones">
+                            <div class="caparazon">
+                                <img id="0" src="./images/caparazon.svg" />
+                            </div>
+                            <div class="caparazon">
+                                <img id="1" src="./images/caparazon.svg" />
+                                <div id="pelotita">
+                                    <div></div>
                                 </div>
-                                <div class="caparazon">
-                                    <img id="1" src="./images/caparazon.svg" />
-                                    <div id="pelotita">
-                                        <div></div>
-                                    </div>
-                                </div>
-                                <div class="caparazon">
-                                    <img id="2" src="./images/caparazon.svg" />
-                                </div>
-                            </section>
-                            <button id="btnRejugar">volver a jugar</button>
+                            </div>
+                            <div class="caparazon">
+                                <img id="2" src="./images/caparazon.svg" />
+                            </div>
                         </section>
-                    </section></section>
+                        <button id="btnRejugar" alt="Volver a Jugar"></button>
+                    </section>
+                </section>
+            </section>
         </article>
     </main>
     <footer class="footer">

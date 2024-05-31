@@ -3,8 +3,11 @@ const btnRejugar = document.getElementById("btnRejugar");
 const numMix2 = 5;
 const caparazones = document.getElementsByClassName("caparazon");
 const ganador = document.getElementById("1");
+const pGanadas = document.getElementById("ganadas");
+const pPerdidas = document.getElementById("perdidas");
 let posicionCaparazon = ["izq", "centro", "der"];
 let caparazonLevantado;
+let puntuaciones = [0, 0];
 
 
 btnRejugar.addEventListener("click", volverAjugar);
@@ -13,6 +16,7 @@ btnRejugar.addEventListener("click", volverAjugar);
 
 function volverAjugar() {
     animar("bajar", "0.5s", caparazonLevantado);
+    caparazonLevantado.src="../images/caparazon-ii.svg";
     mezclarCaparazones();
 }
 
@@ -85,16 +89,20 @@ function deshabilitarListenersCaparazones() {
 }
 
 function mostrarResultado(e) {
-    animar("levantar", "0.5s", e.target);
+    animar("levantar", "0.3s", e.target);
     caparazonLevantado = e.target;
     deshabilitarListenersCaparazones();
     setTimeout(() => {
         if (e.target.id == "1") {
-            alert("ACERTASTE!");
+            e.target.src="../images/acertaste-ii.svg";
+            puntuaciones[0]++;
+            pGanadas.innerText = puntuaciones[0];
         } else {
-            alert("FALLASTE!");
+            e.target.src="../images/fallaste-ii.svg";
+            puntuaciones[1]++;
+            pPerdidas.innerText = puntuaciones[1];
         }
-    }, 500)
+    }, 300)
 }
 
 function animar(animacion, velocidad, elemento) {
@@ -112,3 +120,4 @@ function iniciarJuego() {
     mezclarCaparazones();
 
 }
+

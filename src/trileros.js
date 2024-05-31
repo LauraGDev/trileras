@@ -12,7 +12,7 @@ btnRejugar.addEventListener("click", volverAjugar);
 
 function volverAjugar() {
     animar("bajar", "0.5s", caparazonLevantado);
-    caparazonLevantado.src="../images/caparazon-ii.svg";
+    caparazonLevantado.src = "../images/caparazon-ii.svg";
     darPista();
     mezclarCaparazones();
 }
@@ -96,15 +96,15 @@ function mostrarResultado(e) {
     deshabilitarListenersCaparazones();
     setTimeout(() => {
         if (e.target.id == "1") {
-            e.target.src="../images/acertaste-ii.svg";
+            e.target.src = "../images/acertaste-ii.svg";
             puntuaciones[0]++;
             pGanadas.innerText = puntuaciones[0];
         } else {
-            e.target.src="../images/fallaste-ii.svg";
+            e.target.src = "../images/fallaste-ii.svg";
             puntuaciones[1]++;
             pPerdidas.innerText = puntuaciones[1];
         }
-    }, 300)
+    }, 300);
 }
 
 function animar(animacion, velocidad, elemento) {
@@ -113,13 +113,23 @@ function animar(animacion, velocidad, elemento) {
 }
 //a partir de aquí lo movemos//
 const btnJugar = document.getElementById("btnJugar");
+const zonaJuego = document.getElementById("juego");
+
 btnJugar.addEventListener("click", iniciarJuego);
+
 function iniciarJuego() {
-    animar("deslizar-izquierda","1s",btnJugar);
-    setTimeout(()=>{
-        btnJugar.style.display="none";
-    } ,1000);
-    mezclarCaparazones();
-
+    animar("deslizar-izquierda", "1s", btnJugar);
+    setTimeout(() => {
+        btnJugar.style.display = "none";
+    }, 1000);
+    setTimeout(() => {
+        zonaJuego.style.display = "block";
+    }, 1000);
+    setTimeout(() => {
+        animar("fade-in", "3s", zonaJuego);
+    }, 1001);
+    setTimeout(() => {
+        animar("darPista", "2s", ganador);
+        mezclarCaparazones();
+    }, 4000);
 }
-

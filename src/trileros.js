@@ -1,4 +1,3 @@
-
 const btnRejugar = document.getElementById("btnRejugar");
 const numMix2 = 5;
 const caparazones = document.getElementsByClassName("caparazon");
@@ -6,18 +5,21 @@ const ganador = document.getElementById("1");
 let posicionCaparazon = ["izq", "centro", "der"];
 let caparazonLevantado;
 
-
 btnRejugar.addEventListener("click", volverAjugar);
-
-
 
 function volverAjugar() {
     animar("bajar", "0.5s", caparazonLevantado);
+    darPista();
     mezclarCaparazones();
 }
 
+function darPista() {
+    if (caparazonLevantado.id != "1") {
+        animar("darPista", "2s", ganador);
+    }
+}
+
 function mezclarCaparazones() {
-    animar("darPista", "2s", ganador);
     btnRejugar.disabled = true;
     let contador = 0;
     const intervalId = setInterval(() => {

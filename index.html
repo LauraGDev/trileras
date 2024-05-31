@@ -7,7 +7,7 @@
     <title>Sigue al caparazón</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/63b7e177a4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style-desktop.css">
@@ -18,7 +18,7 @@
     <header class="contenedor">
 
         <a href="#" id="btnSilenciar">
-            <img id="imgSonido" src="./images/volumen-on-boton.svg" alt="silenciar/activar sonido"/>
+            <img id="imgSonido" src="./images/volumen-on-boton.svg" alt="silenciar/activar sonido" />
         </a>
         <section class="contenedor-logo">
             <img class="logo" src="./images/logo-sigue-al-caparazon.svg" alt="Sigue al caparazón">
@@ -31,37 +31,35 @@
                         alt="EMPIEZA A JUGAR" /></a>
             </section>
             <section id="juego" class="contenedor">
-                <section class="zona-no-jugable">
+                <section class="zona-no-jugable contenedor">
                     <section class="temporizador">00:00</section>
                     <section class="contenedor-puntos">
-                        <section>
+                        <section class="puntos">
                             <h3>Score</h3>
-
                             <p>Ganadas <span id="ganadas">0</span></p>
                             <p>Perdidas <span id="perdidas">0</span></p>
                         </section>
                         <a class="btn-reiniciar" id="btn-reiniciar">REINICIAR</a>
                     </section>
-                    <section class="zona-jugable">
-                        <section class="caparazones">
-                            <div class="caparazon">
-                                <img id="0" src="./images/caparazon-ii.svg" />
-                            </div>
-                            <div class="caparazon">
-                                <img id="1" src="./images/caparazon-ii.svg" />
+                </section>
+                <section class="zona-jugable contenedor">
+                    <section class="caparazones">
+                        <div class="caparazon">
+                            <img id="0" src="./images/caparazon-ii.svg" />
+                        </div>
+                        <div class="caparazon">
+                            <img id="1" src="./images/caparazon-ii.svg" />
 
-                                <div id="pelotita">
-                                    <div></div>
-                                </div>
+                            <div id="pelotita">
+                                <div></div>
                             </div>
-                            <div class="caparazon">
+                        </div>
+                        <div class="caparazon">
 
-                                <img id="2" src="./images/caparazon-ii.svg" />
-                            </div>
-                        </section>
-                        <button id="btnRejugar"></button>
-
+                            <img id="2" src="./images/caparazon-ii.svg" />
+                        </div>
                     </section>
+                    <button id="btnRejugar"></button>
                 </section>
             </section>
         </article>

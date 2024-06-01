@@ -273,3 +273,20 @@ footer {
         opacity: 0;
     }
 }
+
+
+#juego {
+    display: none;
+    opacity: 0;
+	animation: animacion 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

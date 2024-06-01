@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,35 +10,32 @@
     <script src="https://kit.fontawesome.com/63b7e177a4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style-desktop.css">
-
 </head>
-
 <body>
-    <header class="contenedor">
-
+    <header>
         <a href="#" id="btnSilenciar">
             <img id="imgSonido" src="./images/volumen-on-boton.svg" alt="silenciar/activar sonido" />
         </a>
-        <section class="contenedor-logo">
+        <section class="contenedor contenedor-logo">
             <img class="logo" src="./images/logo-sigue-al-caparazon.svg" alt="Sigue al caparazón">
         </section>
     </header>
     <main>
-        <article id="pantallaInicio" class="contenedor">
-            <section id="btnJugar" class="contenedor-boton-jugar">
+        <article id="pantallaInicio">
+            <section id="btnJugar" class="contenedor contenedor-boton-jugar">
                 <a href="#"><img class="boton-jugar" src="./images/empieza-jugar-botonii.svg"
                         alt="EMPIEZA A JUGAR" /></a>
             </section>
             <section id="juego" class="contenedor">
                 <section class="zona-no-jugable contenedor">
-                    <section class="temporizador">00:00</section>
+                    <section class="temporizador borde">00:00</section>
                     <section class="contenedor-puntos">
-                        <section class="puntos">
+                        <section class="puntos borde">
                             <h3>Score</h3>
                             <p>Ganadas <span id="ganadas">0</span></p>
                             <p>Perdidas <span id="perdidas">0</span></p>
                         </section>
-                        <a class="btn-reiniciar" id="btn-reiniciar">REINICIAR</a>
+                        <a class="btn-reiniciar borde" id="btn-reiniciar">REINICIAR</a>
                     </section>
                 </section>
                 <section class="zona-jugable contenedor">
@@ -49,13 +45,11 @@
                         </div>
                         <div class="caparazon">
                             <img id="1" src="./images/caparazon-ii.svg" />
-
                             <div id="pelotita">
                                 <div></div>
                             </div>
                         </div>
                         <div class="caparazon">
-
                             <img id="2" src="./images/caparazon-ii.svg" />
                         </div>
                     </section>
@@ -69,5 +63,4 @@
     </footer>
     <script src="/src/trileros.js"></script>
 </body>
-
 </html>

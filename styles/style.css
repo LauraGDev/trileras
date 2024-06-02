@@ -24,6 +24,7 @@ body {
     width: 39px;
     height: 39px;
     background-color: transparent;
+    cursor: pointer;
 }
 
 #imgSonido {
@@ -39,6 +40,7 @@ body {
 
 .logo {
     width: 75%;
+    max-width: 310px;
     margin-top: 0;
 }
 
@@ -47,6 +49,7 @@ body {
     max-width: 501px;
     animation: latido 1.5s ease-in-out infinite forwards;
     margin-top: 200px;
+    cursor: pointer;
 }
 
 .contenedor-boton-jugar a,
@@ -82,7 +85,7 @@ body {
 .contenedor-puntos {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     width: 34%;
     text-transform: uppercase;
     gap:5px;
@@ -138,7 +141,6 @@ h3,
     position: relative;
     padding-top: 50px;
     width: 100%;
-    overflow: hidden;
 }
 
 .caparazones {
@@ -194,7 +196,7 @@ h3,
     min-width: 280px;
     aspect-ratio: 1 / 0.35;
     display: block;
-    margin: 50% auto 15% auto;
+    margin: 40% auto 15% auto;
     border: none;
     cursor: pointer;
 }
@@ -209,27 +211,28 @@ footer {
     text-align: center;
     color: #E7F0BE;
     text-transform: uppercase;
-    bottom: 0;
+    bottom: 20px;
     position: absolute;
 }
 
 @keyframes levantar {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0);
+        
     }
 
     100% {
-        transform: translateY(-70%);
+        transform: translateY(-60%) rotate(-20deg);
     }
 }
 
 @keyframes bajar {
     0% {
-        transform: translateY(-70%);
+        transform: translateY(-60%) rotate(-20deg);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0);
     }
 }
 
@@ -239,7 +242,7 @@ footer {
     }
 
     50% {
-        transform: translateY(-70%);
+        transform: translateY(-60%);
     }
 
     100% {

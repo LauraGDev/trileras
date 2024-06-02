@@ -15,20 +15,42 @@
 
     .logo {
         margin-top: 32px;
-        max-width: 310px;
     }
 
     .contenedor-boton-jugar {
         max-width: 501px!important;
         padding-top: 22%;
+        padding-bottom: 30%;
     }
 
     .zona-no-jugable {
-        margin: 42px;
+        margin: 42px 42px 0 42px;
+    }
+
+    .zona-jugable {
+        padding-top: 15px;
     }
 
     #pelotita {
-        top: 100px;
+        top: 140px;
     }
 
+    #pelotita div {
+        width: 10%;
+    }
+
+    #btnRejugar {
+        margin-top: 35%;
+    }
+
+}
+
+@media screen and (min-width: 440px){ 
+    .contenedor-boton-jugar {
+        padding-bottom: 30%;
+    }
+
+    footer {
+        position: relative;
+    }
 }

@@ -1,18 +1,34 @@
 @media screen and (min-width: 867px) {
-  .boton-jugar {
-
-        width: 501px;
-        height: 246px;
+    body {
+        background-size: 130%;
+        background-attachment: fixed;
     }
-    
+
     .contenedor {
         max-width: 800px;
         margin: 0 auto;
     }
 
+    #imgSonido {
+        margin-left: 0;
+    }
+
+    .logo {
+        margin-top: 32px;
+        max-width: 310px;
+    }
+
+    .contenedor-boton-jugar {
+        max-width: 501px!important;
+        padding-top: 22%;
+    }
+
+    .zona-no-jugable {
+        margin: 42px;
+    }
+
     #pelotita {
         top: 100px;
     }
-
 
 }

@@ -4,11 +4,19 @@ const caparazones = document.getElementsByClassName("caparazon");
 const ganador = document.getElementById("1");
 const pGanadas = document.getElementById("ganadas");
 const pPerdidas = document.getElementById("perdidas");
+const musicaFondo = document.getElementById("musicaFondo");
+
+const imgSonido = document.getElementById("imgSonido");
 let posicionCaparazon = ["izq", "centro", "der"];
 let caparazonLevantado;
 let puntuaciones = [0, 0];
 
 btnRejugar.addEventListener("click", volverAjugar);
+imgSonido.addEventListener('click', alternarSilencio);
+window.addEventListener('load', playMusic);
+musicaFondo.loop = true;
+musicaFondo.preload = "auto";
+
 
 function volverAjugar() {
     animar("bajar", "0.5s", caparazonLevantado);
@@ -138,3 +146,28 @@ function iniciarJuego() {
         mezclarCaparazones();
     }, 4000);
 }
+//sonido
+
+function playMusic() {
+    musicaFondo.play()
+    };
+
+
+
+function alternarSilencio() {
+    if (musicaFondo.muted) {
+        musicaFondo.muted = false;
+        imgSonido.src = "./images/volumen-on-boton.svg"
+    } else {
+        musicaFondo.muted = true;
+        imgSonido.src = "./images/boton-volumen-ii.svg"
+    }
+}
+
+window.addEventListener('click', (event) => {
+    
+    if (event.target.id !== 'imgSonido') {
+        playMusic();
+        window.removeEventListener('click', arguments.callee); 
+    }
+}, { once: true });

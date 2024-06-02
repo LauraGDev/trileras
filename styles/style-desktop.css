@@ -1,18 +1,56 @@
 @media screen and (min-width: 867px) {
-  .boton-jugar {
-
-        width: 501px;
-        height: 246px;
+    body {
+        background-size: 130%;
+        background-attachment: fixed;
     }
-    
+
     .contenedor {
         max-width: 800px;
         margin: 0 auto;
     }
 
-    #pelotita {
-        top: 100px;
+    #imgSonido {
+        margin-left: 0;
     }
 
+    .logo {
+        margin-top: 32px;
+    }
 
+    .contenedor-boton-jugar {
+        max-width: 501px!important;
+        padding-top: 22%;
+        padding-bottom: 30%;
+    }
+
+    .zona-no-jugable {
+        margin: 42px 42px 0 42px;
+    }
+
+    .zona-jugable {
+        padding-top: 15px;
+    }
+
+    #pelotita {
+        top: 140px;
+    }
+
+    #pelotita div {
+        width: 10%;
+    }
+
+    #btnRejugar {
+        margin-top: 35%;
+    }
+
+}
+
+@media screen and (min-width: 440px){ 
+    .contenedor-boton-jugar {
+        padding-bottom: 30%;
+    }
+
+    footer {
+        position: relative;
+    }
 }

@@ -1,31 +1,36 @@
+html, body {
+    min-height: 100%;
+}
 body {
     background-color: #de70bd;
-    background-image: url("../images/fondo-ondas.svg");
+    background-image: url("../images/fondo-ondas-y-puntos.svg");
     font-family: "Poppins", sans-serif;
-    background-size: cover;
+    background-size: 430%;
     background-repeat: no-repeat;
     background-position: center;
     color: #283039;
+    background-attachment: fixed;
 }
 
 .contenedor {
     margin: 0 auto;
 }
 
+.borde {
+    border: 3px solid #283039;
+}
+
 #btnSilenciar {
     width: 39px;
     height: 39px;
     background-color: transparent;
-
-
-
+    cursor: pointer;
 }
 
 #imgSonido {
     display: block;
-    margin: 21px 0 0 15px;
+    margin: 30px 0 0 15px;
 }
-
 
 .contenedor-logo {
     display: flex;
@@ -34,29 +39,34 @@ body {
 }
 
 .logo {
-    width: 77%;
+    width: 75%;
+    max-width: 310px;
     margin-top: 0;
-
-}
-
-.contenedor-boton-jugar,
-.contenedor-boton-jugar a,
-.boton-jugar {
-    width: 100%;
-
 }
 
 .contenedor-boton-jugar {
-    display: flex;
-    justify-content: center;
+    width: 90%;
+    max-width: 501px;
     animation: latido 1.5s ease-in-out infinite forwards;
     margin-top: 200px;
+    cursor: pointer;
+}
+
+.contenedor-boton-jugar a,
+.boton-jugar {
+    width: 100%;
+}
+
+#juego {
+    display: none;
+    opacity: 0;
+	animation: animacion 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards;
 }
 
 .zona-no-jugable {
     display: flex;
     justify-content: space-between;
-    margin: 35px
+    margin:35px 35px 0 35px;
 }
 
 .temporizador {
@@ -65,29 +75,28 @@ body {
     justify-content: center;
     width: 80px;
     height: 80px;
+    padding: 3px;
     background-color: #e7f0be;
-    border-radius: 50px;
+    border-radius: 50%;
     font-weight: 900;
     font-size: 25px;
-    border-color: #283039;
-    border-style: solid;
 }
 
 .contenedor-puntos {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     width: 34%;
     text-transform: uppercase;
     gap:5px;
-
 }
 
 h3 {
     font-size: 20.5px;
     font-weight: 800;
     color: #283039;
-    border-bottom: 1px solid #283039 ;
+    border-bottom: 1px solid #283039;
+    margin-bottom: 2px;
 }
 
 .puntos {
@@ -97,33 +106,27 @@ h3 {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    border-color: #283039;
-    border-style: solid;
-    width: 100%;
-    padding:15px 5px;
-    gap:5px;
-
+    width: 117px;
+    height: 104px;
+    gap:3px;
 }
 
 
 .btn-reiniciar {
     background-color: #DE70BF;
-
-    width: 100%;
+    width: 117px;
     border-radius: 18px;
-    border-style: solid;
-    border-color: #283039;
     font-weight: 900;
     text-align: center;
-    padding:2px 0;
+    padding:3px 0;
     font-size: 17px;
+    cursor: pointer;
 }
 
 h3,
 .puntos p {
     margin: 0;
 }
-
 
 .puntos p {
     font-weight: 600;
@@ -136,18 +139,18 @@ h3,
 
 .zona-jugable {
     position: relative;
-    margin-top: 50px;
+    padding-top: 50px;
     width: 100%;
-    overflow: hidden;
 }
 
 .caparazones {
     margin-top: 20%;
+    display: flex;
 }
 
 .caparazon {
     position: absolute;
-    width: 32%;
+    width: 45%;
     transition: left 1.5s ease;
 }
 
@@ -157,15 +160,15 @@ h3,
 }
 
 .caparazon:nth-child(1) {
-    left: 0%;
+    left: -2%;
 }
 
 .caparazon:nth-child(2) {
-    left: 34%;
+    left: 28%;
 }
 
 .caparazon:nth-child(3) {
-    left: 68%;
+    left: 58%;
 }
 
 #pelotita {
@@ -193,7 +196,7 @@ h3,
     min-width: 280px;
     aspect-ratio: 1 / 0.35;
     display: block;
-    margin: 50% auto 15% auto;
+    margin: 40% auto 15% auto;
     border: none;
     cursor: pointer;
 }
@@ -204,30 +207,32 @@ h3,
 }
 
 footer {
+    width: 100%;
     text-align: center;
     color: #E7F0BE;
+    text-transform: uppercase;
+    bottom: 20px;
     position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 
 @keyframes levantar {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0);
+        
     }
 
     100% {
-        transform: translateY(-70%);
+        transform: translateY(-60%) rotate(-20deg);
     }
 }
 
 @keyframes bajar {
     0% {
-        transform: translateY(-70%);
+        transform: translateY(-60%) rotate(-20deg);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0);
     }
 }
 
@@ -237,7 +242,7 @@ footer {
     }
 
     50% {
-        transform: translateY(-70%);
+        transform: translateY(-60%);
     }
 
     100% {
@@ -272,13 +277,6 @@ footer {
         transform: translateX(-1000px);
         opacity: 0;
     }
-}
-
-
-#juego {
-    display: none;
-    opacity: 0;
-	animation: animacion 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards;
 }
 
 @keyframes fade-in {

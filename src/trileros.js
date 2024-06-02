@@ -20,7 +20,7 @@ musicaFondo.preload = "auto";
 
 function volverAjugar() {
     animar("bajar", "0.5s", caparazonLevantado);
-    caparazonLevantado.src = "../images/caparazon-ii.svg";
+    cambiarImgCaparazon("../images/caparazon-ii.svg");
     darPista();
     mezclarCaparazones();
 }
@@ -69,17 +69,17 @@ function randomizador() {
 function calcularMovimiento(pos) {
     switch (pos) {
         case "izqcentro":
-            return "34%";
+            return "28%";
         case "centroder":
-            return "68%";
+            return "58%";
         case "dercentro":
-            return "34%";
+            return "28%";
         case "centroizq":
-            return "0";
+            return "-2%";
         case "derizq":
-            return "0";
+            return "-2%";
         case "izqder":
-            return "68%";
+            return "58%";
         default:
     }
 }
@@ -99,20 +99,25 @@ function deshabilitarListenersCaparazones() {
 }
 
 function mostrarResultado(e) {
-    animar("levantar", "0.3s", e.target);
-    caparazonLevantado = e.target;
     deshabilitarListenersCaparazones();
-    setTimeout(() => {
-        if (e.target.id == "1") {
-            e.target.src = "../images/acertaste-ii.svg";
-            puntuaciones[0]++;
-            pGanadas.innerText = puntuaciones[0];
-        } else {
-            e.target.src = "../images/fallaste-ii.svg";
-            puntuaciones[1]++;
-            pPerdidas.innerText = puntuaciones[1];
-        }
-    }, 300);
+    let img;
+    if (e.target.id == "1" || e.target.id == "pelotita") {
+        caparazonLevantado = ganador;
+        img = "../images/acertaste-ii.svg";
+        puntuaciones[0]++;
+        pGanadas.innerText = puntuaciones[0];
+    } else {
+        caparazonLevantado = e.target;
+        img = "../images/fallaste-ii.svg";
+        puntuaciones[1]++;
+        pPerdidas.innerText = puntuaciones[1];
+    }
+    animar("levantar", "0.3s", caparazonLevantado);
+    cambiarImgCaparazon(img);
+}
+
+function cambiarImgCaparazon(url) {
+    caparazonLevantado.src = url;
 }
 
 function animar(animacion, velocidad, elemento) {

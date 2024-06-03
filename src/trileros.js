@@ -144,6 +144,7 @@ function iniciarJuego() {
     }, 1000);
     setTimeout(() => {
         animar("fade-in", "3s", zonaJuego);
+        document.body.style.backgroundImage = 'url("../images/fondo-ondas.svg")';
     }, 1001);
     setTimeout(() => {
         animar("darPista", "2s", ganador);

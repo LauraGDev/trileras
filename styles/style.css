@@ -1,6 +1,7 @@
 html, body {
     min-height: 100%;
 }
+
 body {
     background-color: #de70bd;
     background-image: url("../images/fondo-ondas-y-puntos.svg");
@@ -10,6 +11,7 @@ body {
     background-position: center;
     color: #283039;
     background-attachment: fixed;
+    transition: all 1.5s ease;
 }
 
 .contenedor {
@@ -279,32 +281,27 @@ footer {
     }
 }
 
+@keyframes scale-in-center {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
- @keyframes scale-in-center {
+@keyframes scale-in-center {
     0% {
-      -webkit-transform: scale(0);
-              transform: scale(0);
-      opacity: 1;
+        transform: scale(0);
+        opacity: 1;
     }
     100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
-  }
-  @keyframes scale-in-center {
-    0% {
-      -webkit-transform: scale(0);
-              transform: scale(0);
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
+}
 
 @keyframes fade-in {
     0% {

@@ -18,6 +18,8 @@ musicaFondo.loop = true;
 musicaFondo.preload = "auto";
 
 
+
+
 function volverAjugar() {
     animar("bajar", "0.5s", caparazonLevantado);
     cambiarImgCaparazon("../images/caparazon-ii.svg");
@@ -124,6 +126,9 @@ function animar(animacion, velocidad, elemento) {
     elemento.style.animationDuration = velocidad;
     elemento.style.animationName = animacion;
 }
+
+
+
 //a partir de aquí lo movemos//
 const btnJugar = document.getElementById("btnJugar");
 const zonaJuego = document.getElementById("juego");
@@ -143,9 +148,45 @@ function iniciarJuego() {
     }, 1001);
     setTimeout(() => {
         animar("darPista", "2s", ganador);
+        temporizadorEmpieza();
         mezclarCaparazones();
     }, 4000);
+  
 }
+
+const btnReiniciar = document.getElementById("btn-reiniciar");
+btnReiniciar.addEventListener("click", reiniciarJuego);
+function reiniciarJuego() {
+    animar("scale-in-center","1s", btnJugar);
+    
+}
+
+
+//temporizador
+let [segundos, minutos] = [0,0];
+let temporizadorDisplay = document.querySelector(".temporizador");
+
+function temporizador() {
+    segundos++;
+    if(segundos == 60) {
+        segundos = 0;
+        minutos++;
+        if (minutos == 60){
+            segundos = 0;
+            minutos = 0;
+        }
+    }
+
+    let m = minutos < 10 ? "0" + minutos : minutos;
+    let s = segundos < 10 ? "0" + segundos : segundos;
+
+    temporizadorDisplay.innerHTML = `${m}:${s}`;
+}
+
+function temporizadorEmpieza() {
+    setInterval(temporizador, 1000);
+}
+
 //sonido
 
 function playMusic() {

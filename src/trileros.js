@@ -4,17 +4,25 @@ const caparazones = document.getElementsByClassName("caparazon");
 const ganador = document.getElementById("1");
 const pGanadas = document.getElementById("ganadas");
 const pPerdidas = document.getElementById("perdidas");
+const musicaFondo = document.getElementById("musicaFondo");
+
+const imgSonido = document.getElementById("imgSonido");
 let posicionCaparazon = ["izq", "centro", "der"];
 let caparazonLevantado;
 let puntuaciones = [0, 0];
 
 btnRejugar.addEventListener("click", volverAjugar);
+imgSonido.addEventListener('click', alternarSilencio);
+window.addEventListener('load', playMusic);
+musicaFondo.loop = true;
+musicaFondo.preload = "auto";
+
 
 
 
 function volverAjugar() {
     animar("bajar", "0.5s", caparazonLevantado);
-    caparazonLevantado.src="../images/caparazon-ii.svg";
+    cambiarImgCaparazon("../images/caparazon-ii.svg");
     darPista();
     mezclarCaparazones();
 }
@@ -63,17 +71,17 @@ function randomizador() {
 function calcularMovimiento(pos) {
     switch (pos) {
         case "izqcentro":
-            return "34%";
+            return "28%";
         case "centroder":
-            return "68%";
+            return "58%";
         case "dercentro":
-            return "34%";
+            return "28%";
         case "centroizq":
-            return "0";
+            return "-2%";
         case "derizq":
-            return "0";
+            return "-2%";
         case "izqder":
-            return "68%";
+            return "58%";
         default:
     }
 }
@@ -93,20 +101,25 @@ function deshabilitarListenersCaparazones() {
 }
 
 function mostrarResultado(e) {
-    animar("levantar", "0.3s", e.target);
-    caparazonLevantado = e.target;
     deshabilitarListenersCaparazones();
-    setTimeout(() => {
-        if (e.target.id == "1") {
-            e.target.src="../images/acertaste-ii.svg";
-            puntuaciones[0]++;
-            pGanadas.innerText = puntuaciones[0];
-        } else {
-            e.target.src="../images/fallaste-ii.svg";
-            puntuaciones[1]++;
-            pPerdidas.innerText = puntuaciones[1];
-        }
-    }, 300)
+    let img;
+    if (e.target.id == "1" || e.target.id == "pelotita") {
+        caparazonLevantado = ganador;
+        img = "../images/acertaste-ii.svg";
+        puntuaciones[0]++;
+        pGanadas.innerText = puntuaciones[0];
+    } else {
+        caparazonLevantado = e.target;
+        img = "../images/fallaste-ii.svg";
+        puntuaciones[1]++;
+        pPerdidas.innerText = puntuaciones[1];
+    }
+    animar("levantar", "0.3s", caparazonLevantado);
+    cambiarImgCaparazon(img);
+}
+
+function cambiarImgCaparazon(url) {
+    caparazonLevantado.src = url;
 }
 
 function animar(animacion, velocidad, elemento) {
@@ -118,17 +131,28 @@ function animar(animacion, velocidad, elemento) {
 
 //a partir de aquí lo movemos//
 const btnJugar = document.getElementById("btnJugar");
+const zonaJuego = document.getElementById("juego");
+
 btnJugar.addEventListener("click", iniciarJuego);
+
 function iniciarJuego() {
-    animar("deslizar-izquierda","1s",btnJugar);
-    setTimeout(()=>{
-        btnJugar.style.display="none";
-    } ,1000);
-    mezclarCaparazones();
-    temporizadorEmpieza();
-
+    animar("deslizar-izquierda", "1s", btnJugar);
+    setTimeout(() => {
+        btnJugar.style.display = "none";
+    }, 1000);
+    setTimeout(() => {
+        zonaJuego.style.display = "block";
+    }, 1000);
+    setTimeout(() => {
+        animar("fade-in", "3s", zonaJuego);
+    }, 1001);
+    setTimeout(() => {
+        animar("darPista", "2s", ganador);
+        temporizadorEmpieza();
+        mezclarCaparazones();
+    }, 4000);
+  
 }
-
 
 const btnReiniciar = document.getElementById("btn-reiniciar");
 btnReiniciar.addEventListener("click", reiniciarJuego);
@@ -157,11 +181,34 @@ function temporizador() {
     let s = segundos < 10 ? "0" + segundos : segundos;
 
     temporizadorDisplay.innerHTML = `${m}:${s}`;
-
 }
 
 function temporizadorEmpieza() {
     setInterval(temporizador, 1000);
-    
 }
 
+//sonido
+
+function playMusic() {
+    musicaFondo.play()
+    };
+
+
+
+function alternarSilencio() {
+    if (musicaFondo.muted) {
+        musicaFondo.muted = false;
+        imgSonido.src = "./images/volumen-on-boton.svg"
+    } else {
+        musicaFondo.muted = true;
+        imgSonido.src = "./images/boton-volumen-ii.svg"
+    }
+}
+
+window.addEventListener('click', (event) => {
+    
+    if (event.target.id !== 'imgSonido') {
+        playMusic();
+        window.removeEventListener('click', arguments.callee); 
+    }
+}, { once: true });

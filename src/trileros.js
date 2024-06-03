@@ -29,6 +29,7 @@ function volverAjugar() {
 
 function darPista() {
     if (caparazonLevantado.id != "1") {
+        ganador.style.animationName="";
         animar("darPista", "2s", ganador);
     }
 }
@@ -127,8 +128,6 @@ function animar(animacion, velocidad, elemento) {
     elemento.style.animationName = animacion;
 }
 
-
-
 //a partir de aquí lo movemos//
 const btnJugar = document.getElementById("btnJugar");
 const zonaJuego = document.getElementById("juego");
@@ -151,16 +150,13 @@ function iniciarJuego() {
         temporizadorEmpieza();
         mezclarCaparazones();
     }, 4000);
-  
 }
 
 const btnReiniciar = document.getElementById("btn-reiniciar");
 btnReiniciar.addEventListener("click", reiniciarJuego);
 function reiniciarJuego() {
     animar("scale-in-center","1s", btnJugar);
-    
 }
-
 
 //temporizador
 let [segundos, minutos] = [0,0];
@@ -176,10 +172,8 @@ function temporizador() {
             minutos = 0;
         }
     }
-
     let m = minutos < 10 ? "0" + minutos : minutos;
     let s = segundos < 10 ? "0" + segundos : segundos;
-
     temporizadorDisplay.innerHTML = `${m}:${s}`;
 }
 
@@ -193,8 +187,6 @@ function playMusic() {
     musicaFondo.play()
     };
 
-
-
 function alternarSilencio() {
     if (musicaFondo.muted) {
         musicaFondo.muted = false;
@@ -206,7 +198,6 @@ function alternarSilencio() {
 }
 
 window.addEventListener('click', (event) => {
-    
     if (event.target.id !== 'imgSonido') {
         playMusic();
         window.removeEventListener('click', arguments.callee); 
